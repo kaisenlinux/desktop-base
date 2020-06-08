@@ -1,0 +1,28 @@
+Source: desktop-base
+Section: x11
+Priority: optional
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Uploaders: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+XSBC-Original-Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
+Build-Depends: debhelper (>= 11),
+               librsvg2-bin,
+               optipng,
+# For the number in debian-logo-text
+               fonts-quicksand,
+Rules-Requires-Root: no
+Standards-Version: 4.3.0
+
+Package: desktop-base
+Architecture: all
+Depends: librsvg2-common,
+# For the login background with logo
+         fonts-quicksand,
+Recommends: plymouth-label
+Suggests: gnome | kde-standard | xfce4 | wmaker
+Description: common files for the Kaisen Desktop
+ This package contains various miscellaneous files which are used by
+ Debian Desktop installations.  Currently, it provides some
+ Debian-related artwork and themes, .desktop files containing links to
+ Debian related material (suitable for placement on a user's desktop),
+ and other common files between the available desktop environments
+ such as GNOME and KDE.
