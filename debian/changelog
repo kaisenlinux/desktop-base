@@ -1,3 +1,18 @@
+desktop-base (1:1.0+kaisen4) kaisen-testing; urgency=medium
+
+  * Remove (all beta themes):
+  * - blackdragon-theme
+  * - dragondown-theme
+  * - dragonup-theme
+  * - dragonmiror-theme
+  * - logocenter-theme
+  * - logoright-theme
+  * Adding :
+  * - kaisen-dna-center-theme
+  * - kaisen-dna-left-theme
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Sun, 14 Jun 2020 21:12:42 +0200
+
 desktop-base (1:1.0+kaisen3) kaisen-testing; urgency=medium
 
   * Adding :
