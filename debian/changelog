@@ -1,3 +1,9 @@
+desktop-base (1:1.1) kaisen-testing; urgency=medium
+
+  * Adding xfce4 configurations
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Tue, 23 Jun 2020 22:43:14 +0200
+
 desktop-base (1:1.0+kaisen4) kaisen-testing; urgency=medium
 
   * Remove (all beta themes):
@@ -19,7 +25,7 @@ desktop-base (1:1.0+kaisen3) kaisen-testing; urgency=medium
   * - kaisen-block-black-dragon-theme
   * - kaisen-block-white-dragon-theme
   * - kaisen-line-red-theme
-  * - kaisen-linve-white-theme
+  * - kaisen-line-white-theme
   * - kaisen-picto-red-theme
   * - kaisen-picto-white-theme
   * - tobas-theme

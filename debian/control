@@ -11,6 +11,8 @@ Build-Depends: debhelper (>= 11),
                fonts-quicksand,
 Rules-Requires-Root: no
 Standards-Version: 4.3.0
+Vcs-Git: https://gitlab.com/kaisenlinux/packages/desktop-base.git
+Vcs-Browser: https://gitlab.com/kaisenlinux/packages/desktop-base/-/tree/master 
 
 Package: desktop-base
 Architecture: all

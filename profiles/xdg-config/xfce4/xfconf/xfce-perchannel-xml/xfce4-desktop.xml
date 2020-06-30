@@ -18,10 +18,10 @@
           <value type="uint" value="65535"/>
         </property>
         <property name="color-style" type="int" value="1"/>
-        <property name="image-path" type="string" value="/usr/share/images/desktop-base/default"/>
+        <property name="image-path" type="string" value="/usr/share/images/desktop-base/default.png"/>
         <property name="image-show" type="bool" value="true"/>
-        <property name="last-image" type="string" value="/usr/share/images/desktop-base/default"/>
-        <property name="last-single-image" type="string" value="/usr/share/images/desktop-base/default"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/default.png"/>
+        <property name="last-single-image" type="string" value="/usr/share/images/desktop-base/default.png"/>
       </property>
       <property name="monitor1" type="empty">
         <property name="brightness" type="int" value="0"/>
@@ -38,10 +38,10 @@
           <value type="uint" value="65535"/>
         </property>
         <property name="color-style" type="int" value="1"/>
-        <property name="image-path" type="string" value="/usr/share/images/desktop-base/default"/>
+        <property name="image-path" type="string" value="/usr/share/images/desktop-base/default.png"/>
         <property name="image-show" type="bool" value="true"/>
-        <property name="last-image" type="string" value="/usr/share/images/desktop-base/default"/>
-        <property name="last-single-image" type="string" value="/usr/share/images/desktop-base/default"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/default.png"/>
+        <property name="last-single-image" type="string" value="/usr/share/images/desktop-base/default.png"/>
       </property>
     </property>
   </property>
