@@ -19,3 +19,4 @@ echo "$0: '${xml_lint_command}' returned ${xml_lint_result}"
 
 
 exit ${xml_lint_result}
+

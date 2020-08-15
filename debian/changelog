@@ -1,3 +1,17 @@
+desktop-base (1:1.2) kaisen-testing; urgency=medium
+
+  * Import new upstream release
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Sat, 15 Aug 2020 15:32:21 +0200
+
+desktop-base (10.0.3) unstable; urgency=medium
+
+  * Remove Josselin Mouette <joss@debian.org> and Paul Tagliamonte
+    <paultag@debian.org> from Uploaders, thanks for your past work on
+    the package! (Closes: #930145)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 08 Jun 2019 11:40:23 +0200
+
 desktop-base (1:1.1) kaisen-testing; urgency=medium
 
   * Adding xfce4 configurations
@@ -56,6 +70,17 @@ desktop-base (10.0.2) unstable; urgency=medium
 
 desktop-base (10.0.1) unstable; urgency=medium
 
+  [ Aurélien COUDERC ]
+  * Fix login background for SDDM Debian Maui theme.
+  * Default to wallpaper without logo.
+  * Fix incorrect color on Debian red swirl icon.
+  * Improve vertical placement of messages and password input for the
+    moonlight theme.
+  * Improve login screen on default install with XFCE.
+  * Keep Moonlight/plymouth animation running so it doesn’t stop halfway
+    when waiting for passphrase.
+
+  [ Jonathan Carter ]
   * Add plymouth-label as recommends (Closes: #927077)
   * Add self to uploaders
 

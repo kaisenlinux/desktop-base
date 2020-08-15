@@ -5,7 +5,6 @@ GRUB_THEMES=futureprototype-theme/grub\
 	joy-theme/grub\
 	spacefun-theme/grub\
 	kaisen-theme/grub\
-	debian10-theme/grub \
 	kaisen-block-black-dragon/grub \
 	kaisen-block-white-dragon/grub \
 	kaisen-line-red/grub \
@@ -43,7 +42,6 @@ build-logos clean-logos install-logos:
 	@target=`echo $@ | sed s/-logos//`; \
 	$(MAKE) $$target -C debian-logos || exit 1;
 
-
 install: install-grub install-emblems install-logos install-local
 
 install-local:
@@ -72,7 +70,6 @@ install-local:
 
 	# GNOME background descriptors
 	mkdir -p $(DESTDIR)/usr/share/gnome-background-properties
-
 
 	# Space Fun theme (Squeeze’s default)
 	### Plymouth theme
@@ -302,42 +299,6 @@ install-local:
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-theme/wallpaper-withlogo kaisenWithLogo
-
-	# debian10 theme (Other Kaisen Linux theme)
-	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/debian10
-	$(INSTALL_DATA) $(wildcard debian10-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/debian10
-	install -d $(DESTDIR)/usr/share/desktop-base/debian10-theme
-	cd $(DESTDIR)/usr/share/desktop-base/debian10-theme && ln -s /usr/share/plymouth/themes/debian10 plymouth
-
-	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/debian10-theme/login
-	$(INSTALL_DATA) $(wildcard debian10-theme/login/*) $(DESTDIR)/usr/share/desktop-base/debian10-theme/login
-
-	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper/contents/images
-	$(INSTALL_DATA) debian10-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper
-	$(INSTALL_DATA) debian10-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard debian10-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) debian10-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/debian10.xml
-	# Wallpaper symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/debian10-theme/wallpaper debian10
-
-	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/debian10-theme/lockscreen/contents/images
-	$(INSTALL_DATA) debian10-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/debian10-theme/lockscreen
-	$(INSTALL_DATA) debian10-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/debian10-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard debian10-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/debian10-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) debian10-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper-withlogo
-	$(INSTALL_DATA) debian10-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard debian10-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/debian10-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/debian10-theme/wallpaper-withlogo debian10WithLogo
 
 	# kaisen-block-black-dragon theme
 	### Plymouth theme
