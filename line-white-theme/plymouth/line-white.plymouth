@@ -1,0 +1,7 @@
+[Plymouth Theme]
+Name=Default theme for Kaisen Linux
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/line-white
+ScriptFile=/usr/share/plymouth/themes/line-white/line-white.script

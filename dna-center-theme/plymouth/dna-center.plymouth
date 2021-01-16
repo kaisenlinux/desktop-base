@@ -1,0 +1,7 @@
+[Plymouth Theme]
+Name=Default theme for Kaisen Linux
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/dna-center
+ScriptFile=/usr/share/plymouth/themes/dna-center/dna-center.script
