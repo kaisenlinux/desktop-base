@@ -3,5 +3,3 @@
 desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/128x128/emblems/
 desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/256x256/emblems/
 desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/64x64/emblems/
-desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/scalable/emblems/
-

@@ -1,6 +1,6 @@
 dir = usr/share/desktop-base/kaisen-theme/grub
 
-.PHONY: build clean install
+.PHONY: install
 
 files = \
 	grub-4x3.png \

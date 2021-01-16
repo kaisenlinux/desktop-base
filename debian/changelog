@@ -1,3 +1,10 @@
+desktop-base (1:1.5) kaisen-testing; urgency=medium
+
+  * Remove all Debian themes
+  * Update all Kaisen themes and metadatas
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Sat, 16 Aug 2020 20:09:43 +0200
+
 desktop-base (1:1.2) kaisen-testing; urgency=medium
 
   * Import new upstream release
