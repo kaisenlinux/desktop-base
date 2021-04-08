@@ -2,15 +2,14 @@ Source: desktop-base
 Section: x11
 Priority: optional
 XSBC-Original-Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
-Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
-Uploaders: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
-Build-Depends: debhelper (>= 11),
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
+Build-Depends: debhelper (>= 13),
                librsvg2-bin,
                optipng,
 # For the number in debian-logo-text
                fonts-quicksand,
 Rules-Requires-Root: no
-Standards-Version: 4.3.0
+Standards-Version: 4.5.1
 Homepage: https://www.debian.org/devel/debian-desktop/
 Vcs-Browser: https://gitlab.com/kaisenlinux/packages/desktop-base
 Vcs-Git: https://gitlab.com/kaisenlinux/packages/desktop-base.git
@@ -21,7 +20,7 @@ Depends: librsvg2-common,
 # For the login background with logo
          fonts-quicksand,
 Recommends: plymouth-label
-Suggests: gnome | kde-standard | xfce4 | wmaker
+Suggests: kaisen-kde | kaisen-lxde | kaisen-mate | kaisen-xfce
 Description: common files for the Debian Desktop
  This package contains various miscellaneous files which are used by
  Debian Desktop installations.  Currently, it provides some

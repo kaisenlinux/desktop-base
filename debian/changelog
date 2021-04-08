@@ -1,3 +1,9 @@
+desktop-base (1:1.6) kaisen-packages; urgency=medium
+
+  * Update control file
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Thu, 08 Apr 2021 23:07:04 +0200
+
 desktop-base (1:1.5) kaisen-testing; urgency=medium
 
   * Remove all Debian themes
