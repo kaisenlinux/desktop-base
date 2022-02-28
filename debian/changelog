@@ -1,3 +1,10 @@
+desktop-base (1:2.0) kaisen-packages; urgency=medium
+
+  * Update kaisen.png
+  * Update .desktop links
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 28 Feb 2022 05:29:19 +0100
+
 desktop-base (1:1.6) kaisen-packages; urgency=medium
 
   * Update control file
