@@ -10,7 +10,7 @@ GRUB_THEMES=kaisen-theme/grub\
 	dna-left/grub \
 DEFAULT_BACKGROUND=desktop-background
 
-PIXMAPS=$(wildcard pixmaps/*.png)
+PIXMAPS=$(wildcard pixmaps/*.[ps][vn]g)
 DESKTOPFILES=$(wildcard *.desktop)
 
 .PHONY: all clean install install-local
@@ -46,8 +46,8 @@ install-local:
 	mkdir -p $(DESTDIR)/usr/share/desktop-base
 	$(INSTALL_DATA) $(DESKTOPFILES) $(DESTDIR)/usr/share/desktop-base/
 	# pixmaps files
-	mkdir -p $(DESTDIR)/usr/share/pixmaps
-	$(INSTALL_DATA) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/
+	mkdir -p $(DESTDIR)/usr/share/pixmaps/kaisen-logos
+	$(INSTALL_DATA) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/kaisen-logos
 
 	# Create a 'kaisen-theme' symlink in plymouth themes folder, pointing at the
 	# plymouth theme for the currently active 'desktop-theme' alternative.

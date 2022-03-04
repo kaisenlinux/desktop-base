@@ -1,3 +1,17 @@
+desktop-base (1:2.0+kaisen2) kaisen-packages; urgency=medium
+
+  * Add new logos in pixmaps/ and kaisen-logos
+  * Update actual logos
+  * Update makefile
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Fri, 04 Mar 2022 06:27:08 +0100
+
+desktop-base (1:2.0+kaisen1) kaisen-packages; urgency=medium
+
+  * Update emblems logos
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 28 Feb 2022 08:55:07 +0100
+
 desktop-base (1:2.0) kaisen-packages; urgency=medium
 
   * Update kaisen.png
