@@ -1,3 +1,9 @@
+desktop-base (1:2.0+kaisen4) kaisen-packages; urgency=medium
+
+  * Only Kaisen logo will be displayed on plymouth themes
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Wed, 20 Apr 2022 03:10:14 +0100
+
 desktop-base (1:2.0+kaisen3) kaisen-packages; urgency=medium
 
   * Update Kaisen logo for plymouth themes
