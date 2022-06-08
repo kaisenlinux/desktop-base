@@ -1,13 +1,9 @@
 GRUB_THEMES=kaisen-theme/grub\
-	block-black-dragon/grub \
-	line-red/grub \
-	block-white-dragon/grub \
-	line-white/grub \
-	picto-red/grub \
-	dna-center/grub \
-	picto-white/grub \
-	tobas-theme/grub \
-	dna-left/grub \
+	lightdm/grub \
+	sddm/grub \
+	additionnal1/grub \
+	additionnal2/grub \
+	cassis/grub \
 DEFAULT_BACKGROUND=desktop-background
 
 PIXMAPS=$(wildcard pixmaps/*.[ps][vn]g)
@@ -92,337 +88,139 @@ install-local:
 	$(INSTALL_DATA) kaisen-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-theme/lockscreen
 	$(INSTALL_DATA) $(wildcard kaisen-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-theme/lockscreen/contents/images/
 
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) kaisen-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-theme/wallpaper-withlogo
-	$(INSTALL_DATA) kaisen-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard kaisen-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-theme/wallpaper-withlogo kaisenWithLogo
-
-	# block-black-dragon theme
+	# lightdm theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/block-black-dragon
-	$(INSTALL_DATA) $(wildcard block-black-dragon-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/block-black-dragon
-	install -d $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme
-	cd $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme && ln -s /usr/share/plymouth/themes/block-black-dragon plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-lightdm
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-lightdm
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme && ln -s /usr/share/plymouth/themes/kaisen-lightdm plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/login
-	$(INSTALL_DATA) $(wildcard block-black-dragon-theme/login/*) $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper/contents/images
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard block-black-dragon-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) block-black-dragon-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/block-black-dragon.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-lightdm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/wallpaper
+	$(INSTALL_DATA) kaisen-lightdm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-lightdm-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-lightdm.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/block-black-dragon-theme/wallpaper block-black-dragon
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-lightdm-theme/wallpaper kaisen-lightdm
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/lockscreen/contents/images
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/lockscreen
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard block-black-dragon-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-lightdm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen
+	$(INSTALL_DATA) kaisen-lightdm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen/contents/images/
 
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper-withlogo
-	$(INSTALL_DATA) block-black-dragon-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard block-black-dragon-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-black-dragon-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/block-black-dragon-theme/wallpaper-withlogo block-black-dragonWithLogo
-
-	# block-white-dragon theme
+	# sddm theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/block-white-dragon
-	$(INSTALL_DATA) $(wildcard block-white-dragon-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/block-white-dragon
-	install -d $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme
-	cd $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme && ln -s /usr/share/plymouth/themes/block-white-dragon plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-sddm
+	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-sddm
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme && ln -s /usr/share/plymouth/themes/kaisen-sddm plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/login
-	$(INSTALL_DATA) $(wildcard block-white-dragon-theme/login/*) $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper/contents/images
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard block-white-dragon-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) block-white-dragon-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/block-white-dragon.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper
+	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-sddm-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-sddm.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/block-white-dragon-theme/wallpaper block-white-dragon
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-sddm-theme/wallpaper kaisen-sddm
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/lockscreen/contents/images
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/lockscreen
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard block-white-dragon-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen
+	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen/contents/images/
 
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper-withlogo
-	$(INSTALL_DATA) block-white-dragon-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard block-white-dragon-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/block-white-dragon-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/block-white-dragon-theme/wallpaper-withlogo block-white-dragonWithLogo
-
-	# line-red theme
+	# additionnal1 theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/line-red
-	$(INSTALL_DATA) $(wildcard line-red-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/line-red
-	install -d $(DESTDIR)/usr/share/desktop-base/line-red-theme
-	cd $(DESTDIR)/usr/share/desktop-base/line-red-theme && ln -s /usr/share/plymouth/themes/line-red plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal1
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal1
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme && ln -s /usr/share/plymouth/themes/kaisen-additionnal1 plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/line-red-theme/login
-	$(INSTALL_DATA) $(wildcard line-red-theme/login/*) $(DESTDIR)/usr/share/desktop-base/line-red-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper/contents/images
-	$(INSTALL_DATA) line-red-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper
-	$(INSTALL_DATA) line-red-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard line-red-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) line-red-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/line-red.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additionnal1-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additionnal1.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/line-red-theme/wallpaper line-red
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper kaisen-additionnal1
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/line-red-theme/lockscreen/contents/images
-	$(INSTALL_DATA) line-red-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-red-theme/lockscreen
-	$(INSTALL_DATA) line-red-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-red-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard line-red-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-red-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen/contents/images/
 
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) line-red-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper-withlogo
-	$(INSTALL_DATA) line-red-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard line-red-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-red-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/line-red-theme/wallpaper-withlogo line-redWithLogo
-
-	# line-white theme
+	# additionnal2 theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/line-white
-	$(INSTALL_DATA) $(wildcard line-white-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/line-white
-	install -d $(DESTDIR)/usr/share/desktop-base/line-white-theme
-	cd $(DESTDIR)/usr/share/desktop-base/line-white-theme && ln -s /usr/share/plymouth/themes/line-white plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal2
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal2
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme && ln -s /usr/share/plymouth/themes/kaisen-additionnal2 plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/line-white-theme/login
-	$(INSTALL_DATA) $(wildcard line-white-theme/login/*) $(DESTDIR)/usr/share/desktop-base/line-white-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper/contents/images
-	$(INSTALL_DATA) line-white-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper
-	$(INSTALL_DATA) line-white-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard line-white-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) line-white-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/line-white.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additionnal2-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additionnal2.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/line-white-theme/wallpaper line-white
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper kaisen-additionnal2
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/line-white-theme/lockscreen/contents/images
-	$(INSTALL_DATA) line-white-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-white-theme/lockscreen
-	$(INSTALL_DATA) line-white-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-white-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard line-white-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-white-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen/contents/images/
 
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) line-white-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper-withlogo
-	$(INSTALL_DATA) line-white-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard line-white-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/line-white-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/line-white-theme/wallpaper-withlogo line-whiteWithLogo
-
-	# tobas theme
+	# cassis theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/tobas
-	$(INSTALL_DATA) $(wildcard tobas-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/tobas
-	install -d $(DESTDIR)/usr/share/desktop-base/tobas-theme
-	cd $(DESTDIR)/usr/share/desktop-base/tobas-theme && ln -s /usr/share/plymouth/themes/tobas plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-cassis
+	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-cassis
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme && ln -s /usr/share/plymouth/themes/kaisen-cassis plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/tobas-theme/login
-	$(INSTALL_DATA) $(wildcard tobas-theme/login/*) $(DESTDIR)/usr/share/desktop-base/tobas-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper/contents/images
-	$(INSTALL_DATA) tobas-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper
-	$(INSTALL_DATA) tobas-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard tobas-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) tobas-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/tobas.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper
+	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-cassis-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-cassis.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/tobas-theme/wallpaper tobas
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-cassis-theme/wallpaper kaisen-cassis
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/tobas-theme/lockscreen/contents/images
-	$(INSTALL_DATA) tobas-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/tobas-theme/lockscreen
-	$(INSTALL_DATA) tobas-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/tobas-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard tobas-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/tobas-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) tobas-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper-withlogo
-	$(INSTALL_DATA) tobas-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard tobas-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/tobas-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/tobas-theme/wallpaper-withlogo tobasWithLogo
-
-	# picto-red theme
-	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/picto-red
-	$(INSTALL_DATA) $(wildcard picto-red-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/picto-red
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-red-theme
-	cd $(DESTDIR)/usr/share/desktop-base/picto-red-theme && ln -s /usr/share/plymouth/themes/picto-red plymouth
-
-	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-red-theme/login
-	$(INSTALL_DATA) $(wildcard picto-red-theme/login/*) $(DESTDIR)/usr/share/desktop-base/picto-red-theme/login
-
-	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper/contents/images
-	$(INSTALL_DATA) picto-red-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper
-	$(INSTALL_DATA) picto-red-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard picto-red-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) picto-red-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/picto-red.xml
-	# Wallpaper symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/picto-red-theme/wallpaper picto-red
-
-	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-red-theme/lockscreen/contents/images
-	$(INSTALL_DATA) picto-red-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-red-theme/lockscreen
-	$(INSTALL_DATA) picto-red-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-red-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard picto-red-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-red-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) picto-red-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper-withlogo
-	$(INSTALL_DATA) picto-red-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard picto-red-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-red-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/picto-red-theme/wallpaper-withlogo picto-redWithLogo
-
-	# picto-white theme
-	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/picto-white
-	$(INSTALL_DATA) $(wildcard picto-white-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/picto-white
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-white-theme
-	cd $(DESTDIR)/usr/share/desktop-base/picto-white-theme && ln -s /usr/share/plymouth/themes/picto-white plymouth
-
-	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-white-theme/login
-	$(INSTALL_DATA) $(wildcard picto-white-theme/login/*) $(DESTDIR)/usr/share/desktop-base/picto-white-theme/login
-
-	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper/contents/images
-	$(INSTALL_DATA) picto-white-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper
-	$(INSTALL_DATA) picto-white-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard picto-white-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) picto-white-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/picto-white.xml
-	# Wallpaper symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/picto-white-theme/wallpaper picto-white
-
-	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-white-theme/lockscreen/contents/images
-	$(INSTALL_DATA) picto-white-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-white-theme/lockscreen
-	$(INSTALL_DATA) picto-white-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-white-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard picto-white-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-white-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) picto-white-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper-withlogo
-	$(INSTALL_DATA) picto-white-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard picto-white-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/picto-white-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/picto-white-theme/wallpaper-withlogo picto-whiteWithLogo
-
-	# dna-center theme
-	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/dna-center
-	$(INSTALL_DATA) $(wildcard dna-center-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/dna-center
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-center-theme
-	cd $(DESTDIR)/usr/share/desktop-base/dna-center-theme && ln -s /usr/share/plymouth/themes/dna-center plymouth
-
-	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-center-theme/login
-	$(INSTALL_DATA) $(wildcard dna-center-theme/login/*) $(DESTDIR)/usr/share/desktop-base/dna-center-theme/login
-
-	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper/contents/images
-	$(INSTALL_DATA) dna-center-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper
-	$(INSTALL_DATA) dna-center-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard dna-center-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) dna-center-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/dna-center.xml
-	# Wallpaper symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/dna-center-theme/wallpaper dna-center
-
-	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-center-theme/lockscreen/contents/images
-	$(INSTALL_DATA) dna-center-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-center-theme/lockscreen
-	$(INSTALL_DATA) dna-center-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-center-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard dna-center-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-center-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) dna-center-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper-withlogo
-	$(INSTALL_DATA) dna-center-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard dna-center-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-center-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/dna-center-theme/wallpaper-withlogo dna-centerWithLogo
-
-	# dna-left theme
-	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/dna-left
-	$(INSTALL_DATA) $(wildcard dna-left-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/dna-left
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-left-theme
-	cd $(DESTDIR)/usr/share/desktop-base/dna-left-theme && ln -s /usr/share/plymouth/themes/dna-left plymouth
-
-	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-left-theme/login
-	$(INSTALL_DATA) $(wildcard dna-left-theme/login/*) $(DESTDIR)/usr/share/desktop-base/dna-left-theme/login
-
-	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper/contents/images
-	$(INSTALL_DATA) dna-left-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper
-	$(INSTALL_DATA) dna-left-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard dna-left-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) dna-left-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/dna-left.xml
-	# Wallpaper symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/dna-left-theme/wallpaper dna-left
-
-	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-left-theme/lockscreen/contents/images
-	$(INSTALL_DATA) dna-left-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-left-theme/lockscreen
-	$(INSTALL_DATA) dna-left-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-left-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard dna-left-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-left-theme/lockscreen/contents/images/
-
-	### Alternate wallpaper with Debian swirl
-	install -d $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper-withlogo/contents/images
-	$(INSTALL_DATA) dna-left-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper-withlogo
-	$(INSTALL_DATA) dna-left-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper-withlogo
-	$(INSTALL_DATA) $(wildcard dna-left-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/dna-left-theme/wallpaper-withlogo/contents/images/
-	# Lock screen symlink for KDE
-	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/dna-left-theme/wallpaper-withlogo dna-leftWithLogo
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen
+	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen/contents/images/
 
 include Makefile.inc

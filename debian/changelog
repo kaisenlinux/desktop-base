@@ -1,3 +1,10 @@
+desktop-base (1:2.1) kaisen-packages; urgency=medium
+
+  * Add news wallpapers for the Kaisen 2.1 release!
+  * Remove the alternative background
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Wed, 08 Jun 2022 22:59:57 +0100
+
 desktop-base (1:2.0+kaisen5) kaisen-packages; urgency=medium
 
   * Readd logo block but resizing

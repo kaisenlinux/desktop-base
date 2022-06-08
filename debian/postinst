@@ -50,15 +50,11 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
 kaisen 300
-block-black-dragon 40
-block-white-dragon 40
-dna-center 40
-dna-left 40
-line-red 40
-line-white 40
-picto-red 40
-picto-white 40
-tobas 40
+kaisen-lightdm 40
+kaisen-sddm 40
+kaisen-additionnal1 40
+kaisen-additionnal2 40
+kaisen-cassis 40
 EOF
 
     # Use active theme as highest priority for background
@@ -75,36 +71,12 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-kaisen 3840x2160.png 300
-kaisen 2880x1620.png 70
 kaisen 1920x1080.png 200
-block-black-dragon 3840x2160.png 70
-block-black-dragon 2880x1620.png 70
-block-black-dragon 1920x1080.png 70
-block-white-dragon 3840x2160.png 70
-block-white-dragon 2880x1620.png 70
-block-white-dragon 1920x1080.png 70
-dna-center 3840x2160.png 70
-dna-center 2880x1620.png 70
-dna-center 1920x1080.png 70
-dna-left 3840x2160.png 70
-dna-left 2880x1620.png 70
-dna-left 1920x1080.png 70
-line-red 3840x2160.png 70
-line-red 2880x1620.png 70
-line-red 1920x1080.png 70
-line-white 3840x2160.png 70
-line-white 2880x1620.png 70
-line-white 1920x1080.png 70
-picto-red 3840x2160.png 70
-picto-red 2880x1620.png 70
-picto-red 1920x1080.png 70
-picto-white 3840x2160.png 70
-picto-white 2880x1620.png 70
-picto-white 1920x1080.png 70
-tobas 3840x2160.png 70
-tobas 2880x1620.png 70
-tobas 1920x1080.png 70
+kaisen-lightdm 1920x1080.png 70
+kaisen-sddm 1920x1080.png 70
+kaisen-additionnal1 1920x1080.png 70
+kaisen-additionnal2 1920x1080.png 70
+kaisen-cassis 1920x1080.png 70
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -124,15 +96,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
 kaisen 300
-block-black-dragon 40
-block-white-dragon 40
-dna-center 40
-dna-left 40
-line-red 40
-line-white 40
-picto-red 40
-picto-white 40
-tobas 40
+kaisen-lightdm 40
+kaisen-sddm 40
+kaisen-additionnal1 40
+kaisen-additionnal2 40
+kaisen-cassis 40
 EOF
 
     # Set up an alternative for the XML version of the lock screen
@@ -152,42 +120,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
 kaisen 300
-block-black-dragon 40
-block-white-dragon 40
-dna-center 40
-dna-left 40
-line-red 40
-line-white 40
-picto-red 40
-picto-white 40
-tobas 40
-EOF
-
-    # Set up an alternative for the wallpaper for Plasma 5/KDE
-    # Highest priority for active theme
-    active_plasma_wallpaper=/usr/share/desktop-base/active-theme/wallpaper
-    if [ -e ${active_plasma_wallpaper} ]; then
-        update-alternatives --install \
-            /usr/share/wallpapers/KaisenTheme \
-            desktop-plasma5-wallpaper ${active_plasma_wallpaper} 50
-    fi
-    # Alternatives for theme packages
-    while read theme priority; do
-        update-alternatives --install \
-            /usr/share/wallpapers/KaisenTheme \
-            desktop-plasma5-wallpaper \
-            /usr/share/desktop-base/$theme-theme/wallpaper $priority
-    done << EOF
-kaisen 300
-block-black-dragon 40
-block-white-dragon 40
-dna-center 40
-dna-left 40
-line-red 40
-line-white 40
-picto-red 40
-picto-white 40
-tobas 40
+kaisen-lightdm 40
+kaisen-sddm 40
+kaisen-additionnal1 40
+kaisen-additionnal2 40
+kaisen-cassis 40
 EOF
 
     # Login theme
@@ -204,15 +141,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
 kaisen background.png 300
-block-black-dragon background.png 40
-block-white-dragon background.png 40
-dna-center background.png 40
-dna-left background.png 40
-line-red background.png 40
-line-white background.png 40
-picto-red background.png 40
-picto-white background.png 40
-tobas background.png 40
+kaisen-lightdm background.png 40
+kaisen-sddm background.png 40
+kaisen-additionnal1 background.png 40
+kaisen-additionnal2 background.png 40
+kaisen-cassis background.png 40
 EOF
 
     # Set up an alternative for the GRUB background/colors config
@@ -257,8 +190,6 @@ EOF
     done << EOF
 kaisen 4x3 300
 kaisen 16x9 300
-tobas 4x3 40
-tobas 16x9 40
 EOF
 
     # Apply GRUB background update into /boot

@@ -17,39 +17,15 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename
     done << EOF
-kaisen 3840x2160.png
-kaisen 2880x1620.png
 kaisen 1920x1080.png
-block-black-dragon 3840x2160.png
-block-black-dragon 2880x1620.png
-block-black-dragon 1920x1080.png
-block-white-dragon 3840x2160.png
-block-white-dragon 2880x1620.png
-block-white-dragon 1920x1080.png
-dna-center 3840x2160.png
-dna-center 2880x1620.png
-dna-center 1920x1080.png
-dna-left 3840x2160.png
-dna-left 2880x1620.png
-dna-left 1920x1080.png
-line-red 3840x2160.png
-line-red 2880x1620.png
-line-red 1920x1080.png
-line-white 3840x2160.png
-line-white 2880x1620.png
-line-white 1920x1080.png
-picto-red 3840x2160.png
-picto-red 2880x1620.png
-picto-red 1920x1080.png
-picto-white 3840x2160.png
-picto-white 2880x1620.png
-picto-white 1920x1080.png
-tobas 3840x2160.png
-tobas 2880x1620.png
-tobas 1920x1080.png
+kaisen-lightdm 1920x1080.png
+kaisen-sddm 1920x1080.png
+kaisen-additionnal1 1920x1080.png
+kaisen-additionnal2 1920x1080.png
+kaisen-cassis 1920x1080.png
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
-    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/3840x2160.png
+    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.png
 
     # Remove desktop-background.xml alternatives
     # For theme packages
@@ -59,15 +35,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml
     done << EOF
 kaisen
-block-black-dragon
-block-white-dragon
-dna-center
-dna-left
-line-red
-line-white
-picto-red
-picto-white
-tobas
+kaisen-lightdm
+kaisen-sddm
+kaisen-additionnal1
+kaisen-additionnal2
+kaisen-cassis
 EOF
     # *Lastly* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -82,15 +54,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml
     done << EOF
 kaisen
-block-black-dragon
-block-white-dragon
-dna-center
-dna-left
-line-red
-line-white
-picto-red
-picto-white
-tobas
+kaisen-lightdm
+kaisen-sddm
+kaisen-additionnal1
+kaisen-additionnal2
+kaisen-cassis
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -105,15 +73,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper
     done << EOF
 kaisen
-block-black-dragon
-block-white-dragon
-dna-center
-dna-left
-line-red
-line-white
-picto-red
-picto-white
-tobas
+kaisen-lightdm
+kaisen-sddm
+kaisen-additionnal1
+kaisen-additionnal2
+kaisen-cassis
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -129,15 +93,11 @@ EOF
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
 kaisen background.png
-block-black-dragon background.png
-block-white-dragon background.png
-dna-center background.png
-dna-left background.png
-line-red background.png
-line-white background.png
-picto-red background.png
-picto-white background.png
-tobas background.png
+kaisen-lightdm background.png
+kaisen-sddm background.png
+kaisen-additionnal1 background.png
+kaisen-additionnal2 background.png
+kaisen-cassis background.png
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -152,24 +112,16 @@ EOF
     done << EOF
 kaisen 4x3
 kaisen 16x9
-block-black-dragon 4x3
-block-black-dragon 16x9
-block-white-dragon 4x3
-block-white-dragon 16x9
-dna-center 4x3
-dna-center 16x9
-dna-left 4x3
-dna-left 16x9
-line-red 4x3
-line-red 16x9
-line-white 4x3
-line-white 16x9
-picto-red 4x3
-picto-red 16x9
-picto-white 4x3
-picto-white 16x9
-tobas 4x3
-tobas 16x9
+kaisen-lightdm 4x3
+kaisen-lightdm 16x9
+kaisen-sddm 4x3
+kaisen-sddm 16x9
+kaisen-additionnal1 4x3
+kaisen-additionnal1 16x9
+kaisen-additionnal2 4x3
+kaisen-additionnal2 16x9
+kaisen-cassis 4x3
+kaisen-cassis 16x9
 EOF
     ## *Lastly* remove *highest priority* alternative
     num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
@@ -198,15 +150,11 @@ EOF
             /usr/share/desktop-base/$theme-theme
     done << EOF
 kaisen
-block-black-dragon
-block-white-dragon
-dna-center
-dna-left
-line-red
-line-white
-picto-red
-picto-white
-tobas
+kaisen-lightdm
+kaisen-sddm
+kaisen-additionnal1
+kaisen-additionnal2
+kaisen-cassis
 EOF
     ## *Lastly* remove *highest priority* alternative
     update-alternatives --remove \
