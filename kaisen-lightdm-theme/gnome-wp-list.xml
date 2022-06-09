@@ -3,7 +3,7 @@
 <wallpapers>
   <wallpaper>
     <!-- don't include words such as "wallpaper" (avoids translations) -->
-    <name>kaisen</name>
+    <name>kaisen-lightdm-theme</name>
     <filename>/usr/share/desktop-base/kaisen-lightdm-theme/wallpaper/gnome-background.xml</filename>
     <options>zoom</options>
     <pcolor>#ffffff</pcolor>

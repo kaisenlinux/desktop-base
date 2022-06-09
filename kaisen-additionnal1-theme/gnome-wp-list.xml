@@ -3,7 +3,7 @@
 <wallpapers>
   <wallpaper>
     <!-- don't include words such as "wallpaper" (avoids translations) -->
-    <name>additionnaltheme1</name>
+    <name>kaisen-additionnal1-theme</name>
     <filename>/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper/gnome-background.xml</filename>
     <options>zoom</options>
     <pcolor>#ffffff</pcolor>
