@@ -1,3 +1,11 @@
+desktop-base (1:2.3) kaisen-packages; urgency=medium
+
+  * Import the 2.3 lightdm background
+  * Bump the version to 2.3
+  * Source logos reworked
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Thu, 18 May 2023 17:05:16 +0100
+
 desktop-base (1:2.2) kaisen-packages; urgency=medium
 
   * Import the 2.2 lightdm background
