@@ -1,3 +1,11 @@
+desktop-base (1:2.3+kaisen1) kaisen-packages; urgency=medium
+
+  * Add diversion for plymouth themes configurations
+  * Add preinst script
+  * Rebuild the initramfs for all kernels installed
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Sat, 07 Oct 2023 22:33:31 +0100
+
 desktop-base (1:2.3) kaisen-packages; urgency=medium
 
   * Import the 2.3 lightdm background

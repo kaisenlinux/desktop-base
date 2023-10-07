@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+#Setup diversions
+if [[ -e /usr/share/plymouth/plymouthd.defaults ]]; then
+	cp /usr/share/plymouth/plymouthd.defaults /usr/share/plymouth/plymouthd.defaults.old
+	dpkg-divert --quiet --no-rename --package desktop-base --divert /usr/share/plymouth/plymouthd.defaults.old --add /usr/share/plymouth/plymouthd.defaults
+else
+	dpkg-divert --quiet --rename --package desktop-base --divert /usr/share/plymouth/plymouthd.defaults.old --add /usr/share/plymouth/plymouthd.defaults
+fi
+
+if [[ -e /etc/plymouth/plymouthd.conf ]]; then
+	cp /etc/plymouth/plymouthd.conf /etc/plymouth/plymouthd.conf.old
+	dpkg-divert --quiet --no-rename --package desktop-base --divert /etc/plymouth/plymouthd.conf.old --add /etc/plymouth/plymouthd.conf
+else
+	dpkg-divert --quiet --rename --package desktop-base --divert /etc/plymouth/plymouthd.conf.old --add /etc/plymouth/plymouthd.conf
+fi
+
+#DEBHELPER#

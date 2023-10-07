@@ -35,6 +35,12 @@ build-logos clean-logos install-logos:
 install: install-grub install-emblems install-logos install-local
 
 install-local:
+	#plymouth configurations
+	mkdir -p $(DESTDIR)/usr/share/plymouth/
+	$(INSTALL_DATA) plymouth-confs/plymouthd.defaults $(DESTDIR)/usr/share/plymouth
+	mkdir -p $(DESTDIR)/etc/plymouth
+	$(INSTALL_DATA) plymouth-confs/plymouthd.conf $(DESTDIR)/etc/plymouth
+
 	# background files
 	mkdir -p $(DESTDIR)/usr/share/images/desktop-base
 	cd $(DESTDIR)/usr/share/images/desktop-base && ln -s $(DEFAULT_BACKGROUND) default

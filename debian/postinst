@@ -210,7 +210,7 @@ EOF
     fi
 
     if which update-initramfs > /dev/null; then
-        update-initramfs -u
+        update-initramfs -u -k all
     fi
 
 fi

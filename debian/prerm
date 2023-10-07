@@ -162,3 +162,13 @@ EOF
         /usr/share/desktop-base/kaisen-theme
 
 fi
+
+case "$1" in
+	purge|remove|autoremove)
+		#Remove diversion
+		dpkg-divert --quiet --no-rename --remove /usr/share/plymouth/plymouthd.defaults
+		dpkg-divert --quiet --no-rename --remove /etc/plymouth/plymouthd.conf
+	;;
+esac
+
+#DEBHELPER#
