@@ -58,7 +58,7 @@ kaisen-cassis 40
 EOF
 
     # Use active theme as highest priority for background
-    active_background=/usr/share/desktop-base/active-theme/wallpaper/contents/images/3840x2160.png
+    active_background=/usr/share/desktop-base/active-theme/wallpaper/contents/images/*.jpg
     if [ -e ${active_background} ]; then
         update-alternatives --install \
             /usr/share/images/desktop-base/desktop-background \
@@ -71,12 +71,12 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-kaisen 1920x1080.png 200
-kaisen-lightdm 1920x1080.png 70
-kaisen-sddm 1920x1080.png 70
-kaisen-additionnal1 1920x1080.png 70
-kaisen-additionnal2 1920x1080.png 70
-kaisen-cassis 1920x1080.png 70
+kaisen 1920x1080.jpg 200
+kaisen-lightdm 3840x2160.jpg 70
+kaisen-sddm 3840x2160.jpg 70
+kaisen-additionnal1 3840x2160.jpg 70
+kaisen-additionnal2 1920x1080.jpg 70
+kaisen-cassis 3840x2160.jpg 70
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -129,23 +129,23 @@ EOF
 
     # Login theme
     # Highest priority for active theme
-    active_login_background=/usr/share/desktop-base/active-theme/login/background.png
+    active_login_background=/usr/share/desktop-base/active-theme/login/background.jpg
     if [ -e ${active_login_background} ]; then
-        update-alternatives --install /usr/share/images/desktop-base/login-background.png \
+        update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
             desktop-login-background ${active_login_background} 50
     fi
     # Alternatives for theme packages
     while read theme background priority; do
-        update-alternatives --install /usr/share/images/desktop-base/login-background.png \
+        update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
-kaisen background.png 300
-kaisen-lightdm background.png 40
-kaisen-sddm background.png 40
-kaisen-additionnal1 background.png 40
-kaisen-additionnal2 background.png 40
-kaisen-cassis background.png 40
+kaisen background.jpg 300
+kaisen-lightdm background.jpg 40
+kaisen-sddm background.jpg 40
+kaisen-additionnal1 background.jpg 40
+kaisen-additionnal2 background.jpg 40
+kaisen-cassis background.jpg 40
 EOF
 
     # Set up an alternative for the GRUB background/colors config

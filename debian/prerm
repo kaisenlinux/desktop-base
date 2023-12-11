@@ -17,15 +17,15 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename
     done << EOF
-kaisen 1920x1080.png
-kaisen-lightdm 1920x1080.png
-kaisen-sddm 1920x1080.png
-kaisen-additionnal1 1920x1080.png
-kaisen-additionnal2 1920x1080.png
-kaisen-cassis 1920x1080.png
+kaisen 1920x1080.jpg
+kaisen-lightdm 3840x2160.jpg
+kaisen-sddm 3840x2160.jpg
+kaisen-additionnal1 3840x2160.jpg
+kaisen-additionnal2 1920x1080.jpg
+kaisen-cassis 3840x2160.jpg
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
-    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.png
+    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/*.jpg
 
     # Remove desktop-background.xml alternatives
     # For theme packages
@@ -92,17 +92,17 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
-kaisen background.png
-kaisen-lightdm background.png
-kaisen-sddm background.png
-kaisen-additionnal1 background.png
-kaisen-additionnal2 background.png
-kaisen-cassis background.png
+kaisen background.jpg
+kaisen-lightdm background.jpg
+kaisen-sddm background.jpg
+kaisen-additionnal1 background.jpg
+kaisen-additionnal2 background.jpg
+kaisen-cassis background.jpg
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
         desktop-login-background \
-        /usr/share/desktop-base/active-theme/login/background.png
+        /usr/share/desktop-base/active-theme/login/background.jpg
 
     # Remove GRUB background alternatives
     while read theme ratio; do
