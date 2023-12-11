@@ -17,11 +17,11 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename
     done << EOF
-kaisen 1920x1080.jpg
+kaisen 3840x2160.jpg
 kaisen-lightdm 3840x2160.jpg
 kaisen-sddm 3840x2160.jpg
 kaisen-additionnal1 3840x2160.jpg
-kaisen-additionnal2 1920x1080.jpg
+kaisen-additionnal2 3840x2160.jpg
 kaisen-cassis 3840x2160.jpg
 EOF
     # *Last* remove background *highest priority* alternatives for active theme

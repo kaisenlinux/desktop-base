@@ -71,11 +71,11 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-kaisen 1920x1080.jpg 200
+kaisen 3840x2160.jpg 200
 kaisen-lightdm 3840x2160.jpg 70
 kaisen-sddm 3840x2160.jpg 70
 kaisen-additionnal1 3840x2160.jpg 70
-kaisen-additionnal2 1920x1080.jpg 70
+kaisen-additionnal2 3840x2160.jpg 70
 kaisen-cassis 3840x2160.jpg 70
 EOF
 
