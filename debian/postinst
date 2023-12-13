@@ -5,6 +5,12 @@ set -e
 # Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
 
+if [[ "$1" = "configure" ]]; then
+	if dpkg --compare-versions "$2" lt "2.3+kaisen2"; then
+		for images in `find . -type d -name images`;do ln -sf 3840x2160.jpg $images/1920x1080.png;done
+	fi
+fi
+
 if [ "${1}" = "configure" ] && [ ! -z "${2}" ]; then
     if dpkg --compare-versions ${2} le "9.0.0~exp1"; then
         # Try remove folder if empty, left after 9.0.0~exp1 conf suppression
