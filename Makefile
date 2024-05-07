@@ -6,7 +6,9 @@ GRUB_THEMES=kaisen-theme/grub\
 	cassis/grub \
 DEFAULT_BACKGROUND=desktop-background
 
-PIXMAPS=$(wildcard pixmaps/*.[ps][vn]g)
+PIXMAPS_AVATARS=$(wildcard pixmaps/avatars/*.[ps][vn]g)
+PIXMAPS_LOGOS=$(wildcard pixmaps/logos/*.[ps][vn]g)
+PIXMAPS_MENUS=$(wildcard pixmaps/menus/*.[ps][vn]g)
 DESKTOPFILES=$(wildcard *.desktop)
 
 .PHONY: all clean install install-local
@@ -48,8 +50,12 @@ install-local:
 	mkdir -p $(DESTDIR)/usr/share/desktop-base
 	$(INSTALL_DATA) $(DESKTOPFILES) $(DESTDIR)/usr/share/desktop-base/
 	# pixmaps files
-	mkdir -p $(DESTDIR)/usr/share/pixmaps/kaisen-logos
-	$(INSTALL_DATA) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/kaisen-logos
+	mkdir -p $(DESTDIR)/usr/share/pixmaps/kaisen-pics/avatars
+	$(INSTALL_DATA) $(PIXMAPS_AVATARS) $(DESTDIR)/usr/share/pixmaps/kaisen-pics/avatars
+	mkdir -p $(DESTDIR)/usr/share/pixmaps/kaisen-pics/logos
+	$(INSTALL_DATA) $(PIXMAPS_LOGOS) $(DESTDIR)/usr/share/pixmaps/kaisen-pics/logos
+	mkdir -p $(DESTDIR)/usr/share/pixmaps/kaisen-pics/menus
+	$(INSTALL_DATA) $(PIXMAPS_MENUS) $(DESTDIR)/usr/share/pixmaps/kaisen-pics/menus
 
 	# Create a 'kaisen-theme' symlink in plymouth themes folder, pointing at the
 	# plymouth theme for the currently active 'desktop-theme' alternative.
