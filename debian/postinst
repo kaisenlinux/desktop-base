@@ -24,6 +24,12 @@ if [ "${1}" = "configure" ] && [ ! -z "${2}" ]; then
 fi
 
 if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remove" ]; then
+# Ensure of old themes will be removed after an any update
+rm -rf /usr/share/desktop-base/kaisen-additionnal1-theme
+rm -rf /usr/share/desktop-base/kaisen-additionnal2-theme
+rm -rf /usr/share/desktop-base/kaisen-cassis-theme
+rm -rf /usr/share/desktop-base/kaisen-sddm-theme
+
     # Vendor logo alternative
         update-alternatives --install \
             /usr/share/images/vendor-logos \
@@ -57,10 +63,15 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
     done << EOF
 kaisen 300
 kaisen-lightdm 40
-kaisen-sddm 40
-kaisen-additionnal1 40
-kaisen-additionnal2 40
-kaisen-cassis 40
+kaisen-lightdm-blue 40
+kaisen-lockscreen 40
+kaisen-additional1 40
+kaisen-additional2 40
+kaisen-additional3 40
+kaisen-additional4 40
+kaisen-additional5 40
+kaisen-additional6 40
+kaisen-additional7 40
 EOF
 
     # Use active theme as highest priority for background
@@ -79,10 +90,15 @@ EOF
     done << EOF
 kaisen 3840x2160.jpg 200
 kaisen-lightdm 3840x2160.jpg 70
-kaisen-sddm 3840x2160.jpg 70
-kaisen-additionnal1 3840x2160.jpg 70
-kaisen-additionnal2 3840x2160.jpg 70
-kaisen-cassis 3840x2160.jpg 70
+kaisen-lightdm-blue 3840x2160.jpg 70
+kaisen-lockscreen 3840x2160.jpg 70
+kaisen-additional1 3840x2160.jpg 70
+kaisen-additional2 3840x2160.jpg 70
+kaisen-additional3 3840x2160.jpg 70
+kaisen-additional4 3840x2160.jpg 70
+kaisen-additional5 3840x2160.jpg 70
+kaisen-additional6 3840x2160.jpg 70
+kaisen-additional7 3840x2160.jpg 70
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -103,10 +119,15 @@ EOF
     done << EOF
 kaisen 300
 kaisen-lightdm 40
-kaisen-sddm 40
-kaisen-additionnal1 40
-kaisen-additionnal2 40
-kaisen-cassis 40
+kaisen-lightdm-blue 40
+kaisen-lockscreen 40
+kaisen-additional1 40
+kaisen-additional2 40
+kaisen-additional3 40
+kaisen-additional4 40
+kaisen-additional5 40
+kaisen-additional6 40
+kaisen-additional7 40
 EOF
 
     # Set up an alternative for the XML version of the lock screen
@@ -127,10 +148,15 @@ EOF
     done << EOF
 kaisen 300
 kaisen-lightdm 40
-kaisen-sddm 40
-kaisen-additionnal1 40
-kaisen-additionnal2 40
-kaisen-cassis 40
+kaisen-lightdm-blue 40
+kaisen-lockscreen 40
+kaisen-additional1 40
+kaisen-additional2 40
+kaisen-additional3 40
+kaisen-additional4 40
+kaisen-additional5 40
+kaisen-additional6 40
+kaisen-additional7 40
 EOF
 
     # Login theme
@@ -148,10 +174,15 @@ EOF
     done << EOF
 kaisen background.jpg 300
 kaisen-lightdm background.jpg 40
-kaisen-sddm background.jpg 40
-kaisen-additionnal1 background.jpg 40
-kaisen-additionnal2 background.jpg 40
-kaisen-cassis background.jpg 40
+kaisen-lightdm-blue background.jpg 40
+kaisen-lockscreen background.jpg 40
+kaisen-additional1 background.jpg 40
+kaisen-additional2 background.jpg 40
+kaisen-additional3 background.jpg 40
+kaisen-additional4 background.jpg 40
+kaisen-additional5 background.jpg 40
+kaisen-additional6 background.jpg 40
+kaisen-additional7 background.jpg 40
 EOF
 
     # Set up an alternative for the GRUB background/colors config

@@ -19,10 +19,15 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
     done << EOF
 kaisen 3840x2160.jpg
 kaisen-lightdm 3840x2160.jpg
-kaisen-sddm 3840x2160.jpg
-kaisen-additionnal1 3840x2160.jpg
-kaisen-additionnal2 3840x2160.jpg
-kaisen-cassis 3840x2160.jpg
+kaisen-lightdm-blue 3840x2160.jpg
+kaisen-lockscreen 3840x2160.jpg
+kaisen-additional1 3840x2160.jpg
+kaisen-additional2 3840x2160.jpg
+kaisen-additional3 3840x2160.jpg
+kaisen-additional4 3840x2160.jpg
+kaisen-additional5 3840x2160.jpg
+kaisen-additional6 3840x2160.jpg
+kaisen-additional7 3840x2160.jpg
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
     update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/*.jpg
@@ -36,10 +41,15 @@ EOF
     done << EOF
 kaisen
 kaisen-lightdm
-kaisen-sddm
-kaisen-additionnal1
-kaisen-additionnal2
-kaisen-cassis
+kaisen-lightdm-blue
+kaisen-lockscreen
+kaisen-additional1
+kaisen-additional2
+kaisen-additional3
+kaisen-additional4
+kaisen-additional5
+kaisen-additional6
+kaisen-additional7
 EOF
     # *Lastly* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -55,10 +65,15 @@ EOF
     done << EOF
 kaisen
 kaisen-lightdm
-kaisen-sddm
-kaisen-additionnal1
-kaisen-additionnal2
-kaisen-cassis
+kaisen-lightdm-blue
+kaisen-lockscreen
+kaisen-additional1
+kaisen-additional2
+kaisen-additional3
+kaisen-additional4
+kaisen-additional5
+kaisen-additional6
+kaisen-additional7
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -72,12 +87,6 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper
     done << EOF
-kaisen
-kaisen-lightdm
-kaisen-sddm
-kaisen-additionnal1
-kaisen-additionnal2
-kaisen-cassis
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -94,10 +103,15 @@ EOF
     done << EOF
 kaisen background.jpg
 kaisen-lightdm background.jpg
-kaisen-sddm background.jpg
-kaisen-additionnal1 background.jpg
-kaisen-additionnal2 background.jpg
-kaisen-cassis background.jpg
+kaisen-lightdm-blue background.jpg
+kaisen-lockscreen background.jpg
+kaisen-additional1 background.jpg
+kaisen-additional2 background.jpg
+kaisen-additional3 background.jpg
+kaisen-additional4 background.jpg
+kaisen-additional5 background.jpg
+kaisen-additional6 background.jpg
+kaisen-additional7 background.jpg
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -114,14 +128,24 @@ kaisen 4x3
 kaisen 16x9
 kaisen-lightdm 4x3
 kaisen-lightdm 16x9
-kaisen-sddm 4x3
-kaisen-sddm 16x9
-kaisen-additionnal1 4x3
-kaisen-additionnal1 16x9
-kaisen-additionnal2 4x3
-kaisen-additionnal2 16x9
-kaisen-cassis 4x3
-kaisen-cassis 16x9
+kaisen-lightdm-blue 4x3
+kaisen-lightdm-blue 16x9
+kaisen-lockscreen 4x3
+kaisen-lockscreen 16x9
+kaisen-additional1 4x3
+kaisen-additional1 16x9
+kaisen-additional2 4x3
+kaisen-additional2 16x9
+kaisen-additional3 4x3
+kaisen-additional3 16x9
+kaisen-additional4 4x3
+kaisen-additional4 16x9
+kaisen-additional5 4x3
+kaisen-additional5 16x9
+kaisen-additional6 4x3
+kaisen-additional6 16x9
+kaisen-additional7 4x3
+kaisen-additional7 16x9
 EOF
     ## *Lastly* remove *highest priority* alternative
     num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
@@ -129,7 +153,7 @@ EOF
         remove_first_ratio=4x3
         remove_last_ratio=16x9
     else
-        remove_first_ratio=16x9
+       remove_first_ratio=16x9
         remove_last_ratio=4x3
     fi
     update-alternatives --remove \
@@ -151,10 +175,15 @@ EOF
     done << EOF
 kaisen
 kaisen-lightdm
-kaisen-sddm
-kaisen-additionnal1
-kaisen-additionnal2
-kaisen-cassis
+kaisen-lightdm-blue
+kaisen-lockscreen
+kaisen-additional1
+kaisen-additional2
+kaisen-additional3
+kaisen-additional4
+kaisen-additional5
+kaisen-additional6
+kaisen-additional7
 EOF
     ## *Lastly* remove *highest priority* alternative
     update-alternatives --remove \

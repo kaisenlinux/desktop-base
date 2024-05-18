@@ -1,9 +1,14 @@
 GRUB_THEMES=kaisen-theme/grub\
 	lightdm/grub \
-	sddm/grub \
-	additionnal1/grub \
-	additionnal2/grub \
-	cassis/grub \
+	lightdm-blue/grub \
+	lockscreen/grub \
+	additional1/grub \
+	additional2/grub \
+	additional3/grub \
+	additional4/grub \
+	additional5/grub \
+	additional6/grub \
+	additional7/grub \
 DEFAULT_BACKGROUND=desktop-background
 
 PIXMAPS_AVATARS=$(wildcard pixmaps/avatars/*.[ps][vn]g)
@@ -127,112 +132,247 @@ install-local:
 	$(INSTALL_DATA) kaisen-lightdm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen
 	$(INSTALL_DATA) $(wildcard kaisen-lightdm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-theme/lockscreen/contents/images/
 
-	# sddm theme
+	# lightdm-blue theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-sddm
-	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-sddm
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme
-	cd $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme && ln -s /usr/share/plymouth/themes/kaisen-sddm plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-lightdm-blue
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-blue-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-lightdm-blue
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme && ln -s /usr/share/plymouth/themes/kaisen-lightdm-blue plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/login
-	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-blue-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper/contents/images
-	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper
-	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) kaisen-sddm-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-sddm.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-lightdm-blue-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/wallpaper
+	$(INSTALL_DATA) kaisen-lightdm-blue-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-blue-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-lightdm-blue-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-lightdm-blue.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-sddm-theme/wallpaper kaisen-sddm
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-lightdm-blue-theme/wallpaper kaisen-lightdm-blue
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen/contents/images
-	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen
-	$(INSTALL_DATA) kaisen-sddm-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard kaisen-sddm-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-sddm-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-lightdm-blue-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/lockscreen
+	$(INSTALL_DATA) kaisen-lightdm-blue-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-lightdm-blue-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lightdm-blue-theme/lockscreen/contents/images/
 
-	# additionnal1 theme
+	# lockscreen theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal1
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal1
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme
-	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme && ln -s /usr/share/plymouth/themes/kaisen-additionnal1 plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-lockscreen-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-lockscreen
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme && ln -s /usr/share/plymouth/themes/kaisen-lockscreen plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/login
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-lockscreen-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper/contents/images
-	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper
-	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) kaisen-additionnal1-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additionnal1.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-lockscreen-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/wallpaper
+	$(INSTALL_DATA) kaisen-lockscreen-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-lockscreen-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-lockscreen-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-lockscreen.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additionnal1-theme/wallpaper kaisen-additionnal1
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-lockscreen-theme/wallpaper kaisen-lockscreen
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen/contents/images
-	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen
-	$(INSTALL_DATA) kaisen-additionnal1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal1-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-lockscreen-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/lockscreen
+	$(INSTALL_DATA) kaisen-lockscreen-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-lockscreen-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-lockscreen-theme/lockscreen/contents/images/
 
-	# additionnal2 theme
+	# additional1 theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal2
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additionnal2
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme
-	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme && ln -s /usr/share/plymouth/themes/kaisen-additionnal2 plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional1
+	$(INSTALL_DATA) $(wildcard kaisen-additional1-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional1
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme && ln -s /usr/share/plymouth/themes/kaisen-additional1 plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/login
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional1-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper/contents/images
-	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper
-	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) kaisen-additionnal2-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additionnal2.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional1-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional1.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additionnal2-theme/wallpaper kaisen-additionnal2
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional1-theme/wallpaper kaisen-additional1
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen/contents/images
-	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen
-	$(INSTALL_DATA) kaisen-additionnal2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard kaisen-additionnal2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additionnal2-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional1-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional1-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional1-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional1-theme/lockscreen/contents/images/
 
-	# cassis theme
+	# additional2 theme
 	### Plymouth theme
-	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-cassis
-	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-cassis
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme
-	cd $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme && ln -s /usr/share/plymouth/themes/kaisen-cassis plymouth
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional2
+	$(INSTALL_DATA) $(wildcard kaisen-additional2-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional2
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme && ln -s /usr/share/plymouth/themes/kaisen-additional2 plymouth
 
 	### Login background
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/login
-	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/login
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional2-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/login
 
 	### Wallpapers
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper/contents/images
-	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper
-	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper
-	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) kaisen-cassis-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-cassis.xml
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional2-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional2.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-cassis-theme/wallpaper kaisen-cassis
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional2-theme/wallpaper kaisen-additional2
 
 	### Lockscreen is using the same image as wallpaper
-	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen/contents/images
-	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen
-	$(INSTALL_DATA) kaisen-cassis-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen
-	$(INSTALL_DATA) $(wildcard kaisen-cassis-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-cassis-theme/lockscreen/contents/images/
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional2-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional2-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional2-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional2-theme/lockscreen/contents/images/
+
+	# additional3 theme
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional3
+	$(INSTALL_DATA) $(wildcard kaisen-additional2-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional3
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme && ln -s /usr/share/plymouth/themes/kaisen-additional3 plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional3-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional3-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional3-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional3-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional3-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional3.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional3-theme/wallpaper kaisen-additional3
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional3-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional3-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional3-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional3-theme/lockscreen/contents/images/
+
+	# additional4 theme
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional4
+	$(INSTALL_DATA) $(wildcard kaisen-additional5-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional4
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme && ln -s /usr/share/plymouth/themes/kaisen-additional4 plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional4-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional4-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional4-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional4-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional4-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional4.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional4-theme/wallpaper kaisen-additional4
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional4-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional4-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional4-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional4-theme/lockscreen/contents/images/
+
+	# additional5 theme
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional5
+	$(INSTALL_DATA) $(wildcard kaisen-additional5-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional5
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme && ln -s /usr/share/plymouth/themes/kaisen-additional5 plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional5-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional5-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional5-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional5-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional5-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional5.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional5-theme/wallpaper kaisen-additional5
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional5-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional5-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional5-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional5-theme/lockscreen/contents/images/
+
+	# additional6 theme
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional6
+	$(INSTALL_DATA) $(wildcard kaisen-additional6-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional6
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme && ln -s /usr/share/plymouth/themes/kaisen-additional6 plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional6-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional6-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional6-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional6-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional6-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional6.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional6-theme/wallpaper kaisen-additional6
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional6-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional6-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional6-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional6-theme/lockscreen/contents/images/
+
+	# additional7 theme
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional7
+	$(INSTALL_DATA) $(wildcard kaisen-additional7-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/kaisen-additional7
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme
+	cd $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme && ln -s /usr/share/plymouth/themes/kaisen-additional7 plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/login
+	$(INSTALL_DATA) $(wildcard kaisen-additional7-theme/login/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/wallpaper/contents/images
+	$(INSTALL_DATA) kaisen-additional7-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/wallpaper
+	$(INSTALL_DATA) kaisen-additional7-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard kaisen-additional7-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) kaisen-additional7-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/kaisen-additional7.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/kaisen-additional7-theme/wallpaper kaisen-additional7
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/lockscreen/contents/images
+	$(INSTALL_DATA) kaisen-additional7-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/lockscreen
+	$(INSTALL_DATA) kaisen-additional7-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard kaisen-additional7-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/kaisen-additional7-theme/lockscreen/contents/images/
 
 include Makefile.inc

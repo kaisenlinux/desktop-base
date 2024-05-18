@@ -1,3 +1,10 @@
+desktop-base (1:2.3+kaisen6) kaisen-packages; urgency=medium
+
+  * Add the news 3.0 Kaisen wallpapers
+  * Add the plymouth-themes package in the Depends: field
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Sat, 18 May 2024 04:23:06 +0200
+
 desktop-base (1:2.3+kaisen5) kaisen-packages; urgency=medium
 
   * Add the new icon for lightdm

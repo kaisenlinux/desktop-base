@@ -17,6 +17,7 @@ Vcs-Git: https://gitlab.com/kaisenlinux/packages/desktop-base.git
 Package: desktop-base
 Architecture: all
 Depends: librsvg2-common,
+	 plymouth-themes,
 # For the login background with logo
          fonts-quicksand,
 Recommends: plymouth-label
