@@ -1,3 +1,10 @@
+desktop-base (1:2.3+kaisen7) kaisen-packages; urgency=medium
+
+  * Replace cyan logos and avatars by blue logos
+  * 0644 rights by default for all pictures
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Fri, 24 May 2024 03:15:27 +0200
+
 desktop-base (1:2.3+kaisen6) kaisen-packages; urgency=medium
 
   * Add the news 3.0 Kaisen wallpapers
